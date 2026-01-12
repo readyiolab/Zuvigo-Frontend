@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { name: "How We Build", href: "#how-we-build" },
@@ -12,6 +13,9 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,27 +39,33 @@ export function Navbar() {
       <div className="container-wide">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.a
-            href="#"
-            className="flex items-center gap-2 group"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-lg">Z</span>
-            </div>
-            <span className="font-display font-semibold text-xl text-foreground">Zuvigo</span>
-          </motion.a>
+          <Link to="/">
+            <motion.div
+              className="flex items-center gap-2 group cursor-pointer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+                <span className="text-primary-foreground font-display font-bold text-lg">Z</span>
+              </div>
+              <span className="font-display font-semibold text-xl text-foreground">Zuvigo</span>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
               const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.preventDefault();
-                const hash = link.href.replace("#", "");
-                const element = document.getElementById(hash);
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (!isHomePage) {
+                  // Navigate to home page with hash
+                  navigate("/" + link.href);
+                } else {
+                  const hash = link.href.replace("#", "");
+                  const element = document.getElementById(hash);
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
                 }
               };
               
@@ -109,13 +119,18 @@ export function Navbar() {
                 const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
                   e.preventDefault();
                   setIsMobileMenuOpen(false);
-                  const hash = link.href.replace("#", "");
-                  const element = document.getElementById(hash);
-                  if (element) {
-                    // Small delay to allow menu to close first
-                    setTimeout(() => {
-                      element.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }, 100);
+                  if (!isHomePage) {
+                    // Navigate to home page with hash
+                    navigate("/" + link.href);
+                  } else {
+                    const hash = link.href.replace("#", "");
+                    const element = document.getElementById(hash);
+                    if (element) {
+                      // Small delay to allow menu to close first
+                      setTimeout(() => {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }, 100);
+                    }
                   }
                 };
                 

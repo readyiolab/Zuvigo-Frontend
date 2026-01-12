@@ -92,6 +92,12 @@ export function HeroSection() {
               <Button
                 size="lg"
                 className="group rounded-full px-8 py-6 text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-xl hover:shadow-primary/25"
+                onClick={() => {
+                  const element = document.getElementById("contact");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }}
               >
                 Start a Project
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -100,6 +106,12 @@ export function HeroSection() {
                 size="lg"
                 variant="outline"
                 className="group rounded-full px-8 py-6 text-base font-medium border-border hover:bg-accent transition-all duration-300"
+                onClick={() => {
+                  const element = document.getElementById("work");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }}
               >
                 <Play className="mr-2 w-4 h-4" />
                 View Our Work
