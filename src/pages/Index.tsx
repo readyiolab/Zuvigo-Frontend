@@ -6,6 +6,7 @@ import { SelectedWorkSection } from "@/components/landing/SelectedWorkSection";
 import { AnalyticsSection } from "@/components/landing/AnalyticsSection";
 import { FooterCTA } from "@/components/landing/FooterCTA";
 import CTA from "@/components/landing/CTA";
+import { Chatbot } from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -17,9 +18,10 @@ const Index = () => {
         <SolutionsSection />
         <SelectedWorkSection />
         {/* <AnalyticsSection /> */}
-        <CTA/>
+        <CTA />
       </main>
       <FooterCTA />
+      <Chatbot />
     </div>
   );
 };

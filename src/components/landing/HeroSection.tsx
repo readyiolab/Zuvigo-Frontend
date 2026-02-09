@@ -15,12 +15,13 @@ export function HeroSection() {
 
   return (
     <section
+      id="hero"
       ref={containerRef}
       className="relative min-h-screen flex items-center pt-20 overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-surface-subtle to-background" />
-      
+
       {/* Decorative elements */}
       <motion.div
         className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
@@ -54,7 +55,7 @@ export function HeroSection() {
             style={{ y, opacity }}
             className="max-w-2xl"
           >
-           
+
 
             {/* Headline */}
             <motion.h1
@@ -68,7 +69,7 @@ export function HeroSection() {
               <span className="relative">
                 We Build{" "}
                 <span className="gradient-text">What's Next.</span>
-               
+
               </span>
             </motion.h1>
 
@@ -79,7 +80,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-10 text-balance"
             >
-             From sleek websites to smart automation, we help founders and entrepreneurs build digital systems that scale their business.
+              From sleek websites to smart automation, we help founders and entrepreneurs build digital systems that scale their business.
             </motion.p>
 
             {/* CTAs */}
@@ -118,7 +119,7 @@ export function HeroSection() {
               </Button>
             </motion.div>
 
-            
+
           </motion.div>
 
           {/* Right Content - Device Mockups */}
@@ -181,7 +182,7 @@ export function HeroSection() {
                 </div>
               </motion.div>
 
-             
+
             </div>
           </motion.div>
         </div>

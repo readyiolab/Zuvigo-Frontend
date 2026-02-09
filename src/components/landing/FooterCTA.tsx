@@ -16,7 +16,7 @@ const footerLinks = [
     title: "Company",
     links: [
       { label: "About", href: "/" },
-      
+
     ],
   },
   {
@@ -31,7 +31,7 @@ const footerLinks = [
   {
     title: "Resources",
     links: [
-      
+
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
     ],
@@ -44,7 +44,7 @@ export function FooterCTA() {
 
   return (
     <footer ref={containerRef}>
-      
+
 
       {/* Footer Links */}
       <div className="bg-foreground text-background border-t border-background/10">
@@ -53,13 +53,10 @@ export function FooterCTA() {
             {/* Brand */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-display font-bold text-lg">Z</span>
-                </div>
-                <span className="font-display font-semibold text-xl">Zuvigo</span>
+                <img src="/footer_logo.webp" alt="Zuvigo" className="w-auto h-20 object-contain rounded-xl" />
               </div>
               <p className="text-background/60 mb-6 max-w-sm">
-                Digital agency crafting exceptional experiences through strategy, 
+                Digital agency crafting exceptional experiences through strategy,
                 design, and technology.
               </p>
               <div className="flex gap-4">
@@ -94,19 +91,19 @@ export function FooterCTA() {
                   {group.links.map((link) => {
                     const isHashLink = link.href.includes("#");
                     const isInternal = link.href.startsWith("/") && !link.href.startsWith("/http");
-                    
+
                     // Handle hash links with smooth scroll
                     const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
                       if (isHashLink) {
                         e.preventDefault();
                         const [path, hash] = link.href.split("#");
-                        
+
                         // If not on home page, navigate first
                         if (window.location.pathname !== "/" && path === "/") {
                           window.location.href = link.href;
                           return;
                         }
-                        
+
                         // Scroll to element
                         const element = document.getElementById(hash);
                         if (element) {
@@ -114,7 +111,7 @@ export function FooterCTA() {
                         }
                       }
                     };
-                    
+
                     return (
                       <li key={link.label}>
                         {isInternal && !isHashLink ? (
@@ -122,8 +119,8 @@ export function FooterCTA() {
                             {link.label}
                           </Link>
                         ) : isHashLink ? (
-                          <a 
-                            href={link.href} 
+                          <a
+                            href={link.href}
                             onClick={handleHashClick}
                             className="text-background/60 hover:text-primary transition-colors cursor-pointer"
                           >

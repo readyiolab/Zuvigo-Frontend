@@ -46,6 +46,34 @@ const projects = [
     image: "/singhkarman.png",
     link: "https://singhkarman.com/",
   },
+  {
+    id: "shinakaur",
+    title: "Shina Kaur",
+    category: "Coaching & Wellness",
+    description: "Compassionate support for high-achievers navigating personal, professional, emotional, or spiritual transitions. Co-creating clarity and personalized strategy to rebuild alignment.",
+    results: [
+      "Private Coaching for Sacred Pivots",
+      "Digital Toolkit for self-inquiry",
+      "Live Workshops for organizations"
+    ],
+    tags: ["Coaching", "Wellness", "Strategy"],
+    image: "/shina.png",
+    link: "https://shinakaur.com/",
+  },
+  {
+    id: "freedomma",
+    title: "Freedom M&A",
+    category: "AI & Automation",
+    description: "Transforming M&A for $50M–$150M founders with intelligent automation. AI agents and Twilio integrations streamline lead management.",
+    results: [
+      "AI Agent & Chatbot Integration",
+      "Twilio Integration for Automated Calls",
+      "Seamless Lead Automation System"
+    ],
+    tags: ["AI Agents", "Automation", "Twilio"],
+    image: "/dave.png",
+    link: "https://www.freedommergers.com/",
+  },
 ];
 
 export function SelectedWorkSection() {
@@ -69,8 +97,8 @@ export function SelectedWorkSection() {
               Selected Work
             </h2>
           </div>
-        
-         
+
+
         </motion.div>
 
         {/* Projects Grid */}
@@ -85,18 +113,18 @@ export function SelectedWorkSection() {
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              <a 
-                href={project.link} 
-                target="_blank" 
+              <a
+                href={project.link}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block h-full"
               >
                 <div className="relative overflow-hidden rounded-2xl bg-background border border-border transition-all duration-500 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 h-full flex flex-col">
                   {/* Project Media (fixed aspect ratio for equal heights) */}
-                  <AspectRatio ratio={16/10}>
+                  <AspectRatio ratio={16 / 10}>
                     <div className="relative w-full h-full overflow-hidden bg-muted">
-                      <img 
-                        src={project.image} 
+                      <img
+                        src={project.image}
                         alt={project.title}
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
@@ -110,7 +138,7 @@ export function SelectedWorkSection() {
                       <motion.div
                         className="absolute inset-0 p-6 flex flex-col justify-end"
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ 
+                        animate={{
                           opacity: hoveredId === project.id ? 1 : 0,
                           y: hoveredId === project.id ? 0 : 20
                         }}
@@ -132,7 +160,7 @@ export function SelectedWorkSection() {
                       <motion.div
                         className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center text-foreground"
                         initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ 
+                        animate={{
                           opacity: hoveredId === project.id ? 1 : 0,
                           scale: hoveredId === project.id ? 1 : 0.8
                         }}
@@ -149,7 +177,7 @@ export function SelectedWorkSection() {
                     <h3 className="text-xl font-display font-semibold text-foreground mt-1 mb-4 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    
+
                     {/* Results */}
                     <ul className="space-y-2">
                       {project.results.map((result) => (
