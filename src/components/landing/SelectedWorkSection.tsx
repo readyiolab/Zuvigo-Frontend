@@ -89,16 +89,17 @@ export function SelectedWorkSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16"
+          className="text-center max-w-4xl mx-auto mb-16"
         >
           <div>
             <span className="text-primary font-medium text-sm uppercase tracking-wider">Portfolio</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground mt-4">
-              Selected Work
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground mt-4 mb-6">
+              Growth through Innovation: <span className="block mt-2">Selected Work</span>
             </h2>
+            <p className="text-lg text-muted-foreground">
+              A curated showcase of digital platforms and automated systems designed for global impact.
+            </p>
           </div>
-
-
         </motion.div>
 
         {/* Projects Grid */}

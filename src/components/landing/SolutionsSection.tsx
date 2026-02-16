@@ -58,7 +58,7 @@ const solutions = [
     id: "grow",
     icon: TrendingUp,
     title: "Engage & Grow",
-    subtitle: "Build an audience that stays",
+    subtitle: "Build an audience that stay and grow",
     description: "Transform your audience into loyal advocates through authentic content, storytelling, and consistent visibility.",
     services: [
       {
@@ -116,7 +116,7 @@ export function SolutionsSection() {
         <div className="text-center max-w-4xl mx-auto mb-20">
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mt-4 mb-6">
-            Solutions Designed for Every Stage of Growth
+            Solutions Designed for Every <span className="block mt-2">Stage of Growth</span>
           </h2>
           <p className="text-xl text-gray-600">
             Whether you're launching, automating, or scaling, Zuvigo provides structured digital systems that help your business thrive.
@@ -140,7 +140,7 @@ function SolutionBlock({ solution, index }) {
   return (
     <div className="relative">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-stretch">
-        
+
         {/* Content - Left or Right */}
         <div className={isLeft ? 'lg:order-1' : 'lg:order-2'}>
           {/* Header */}
@@ -152,7 +152,7 @@ function SolutionBlock({ solution, index }) {
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             {solution.subtitle}
           </h3>
-          
+
           <p className="text-lg text-gray-600 mb-10 leading-relaxed">
             {solution.description}
           </p>
@@ -171,16 +171,16 @@ function SolutionBlock({ solution, index }) {
                   {service.description}
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-2">
-  {service.features.map((feature) => (
-    <li
-      key={feature}
-      className="flex items-center gap-2 text-sm text-gray-700"
-    >
-      <Circle className="w-1.5 h-1.5 text-blue-600 fill-blue-600 flex-shrink-0" />
-      <span className="leading-tight">{feature}</span>
-    </li>
-  ))}
-</ul>
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-center gap-2 text-sm text-gray-700"
+                    >
+                      <Circle className="w-1.5 h-1.5 text-blue-600 fill-blue-600 flex-shrink-0" />
+                      <span className="leading-tight">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
 
               </div>
             ))}

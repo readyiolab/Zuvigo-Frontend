@@ -29,7 +29,7 @@ const CTA = () => {
     try {
       // Determine backend URL based on environment
       const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
-      
+
       const response = await fetch(`${backendUrl}/api/contact`, {
         method: 'POST',
         headers: {
@@ -74,19 +74,15 @@ const CTA = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="max-w-xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8">
-              <span className="text-sm font-bold text-primary">Ready to start?</span>
-            </div>
+
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
               Ready to Build
-              <br />
-              <span className="gradient-text">What's Next?</span>
+              <span className="block mt-2 gradient-text">What's Next?</span>
             </h2>
 
             <p className="text-lg text-slate-700 mb-10">
-              Let's discuss how we can help transform your ideas into a powerful digital presence 
+              Let's discuss how we can help transform your ideas into a powerful digital presence
               that drives real results.
             </p>
 
