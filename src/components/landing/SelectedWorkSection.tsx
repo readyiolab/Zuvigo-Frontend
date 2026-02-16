@@ -74,6 +74,20 @@ const projects = [
     image: "/dave.png",
     link: "https://www.freedommergers.com/",
   },
+  {
+    id: "cedento",
+    title: "Cedento",
+    category: "Dental Marketing",
+    description: "All-in-one marketing and practice growth platform specifically designed for dental professionals.",
+    results: [
+      "Custom-designed, mobile-ready websites",
+      "Integrated booking & practice management",
+      "AI-driven SEO & social media strategies"
+    ],
+    tags: ["Dental", "Marketing", "SEO"],
+    image: "/cedento.png",
+    link: "https://cedento.com/",
+  },
 ];
 
 export function SelectedWorkSection() {
